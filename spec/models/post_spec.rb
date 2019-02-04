@@ -12,12 +12,12 @@ describe "class methods" do
     @post_tom = Post.create(title: "Chasing Mice", description: "Doesn't Work", author: @author2)
     @post_tom.update_attribute(:created_at, Time.zone.today.advance(days: -1))
   end
-
-  it "queries for posts by author" do
-    posts = Post.by_author(@author.id)
-    expect(posts.count).to eq 1
-    expect(posts.first.title).to eq("Scary Test")
-  end
+  # 
+  # it "queries for posts by author" do
+  #   posts = Post.by_author(@author.id)
+  #   expect(posts.count).to eq 1
+  #   expect(posts.first.title).to eq("Scary Test")
+  # end
 
   it "queries for posts today" do
     expect(Post.from_today.count).to eq 1
